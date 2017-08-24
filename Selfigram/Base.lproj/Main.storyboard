@@ -97,22 +97,56 @@
             </objects>
             <point key="canvasLocation" x="49" y="-815"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="XNs-77-NsP">
             <objects>
-                <tableViewController id="Q2o-ZM-OzL" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="MJO-RZ-S6M">
+                <tableViewController id="Q2o-ZM-OzL" customClass="FeedViewController" customModule="Selfigram" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="320" sectionHeaderHeight="28" sectionFooterHeight="28" id="MJO-RZ-S6M">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="55K-Qp-O8b">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="320" id="55K-Qp-O8b" customClass="SelfieCell" customModule="Selfigram" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="320"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="55K-Qp-O8b" id="h7C-g5-inU">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lsd-eq-zsu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="250" id="1EP-Wq-JTv"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxK-bl-ajC">
+                                            <rect key="frame" x="0.0" y="258" width="76" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbC-Tw-Cp4">
+                                            <rect key="frame" x="0.0" y="287" width="72.5" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="lsd-eq-zsu" firstAttribute="leading" secondItem="h7C-g5-inU" secondAttribute="leading" id="Jax-8a-xkE"/>
+                                        <constraint firstItem="MxK-bl-ajC" firstAttribute="top" secondItem="lsd-eq-zsu" secondAttribute="bottom" constant="8" id="Khi-tO-bhh"/>
+                                        <constraint firstItem="LbC-Tw-Cp4" firstAttribute="leading" secondItem="h7C-g5-inU" secondAttribute="leading" id="LeU-RN-KXg"/>
+                                        <constraint firstItem="MxK-bl-ajC" firstAttribute="leading" secondItem="h7C-g5-inU" secondAttribute="leading" id="g7V-DV-Sy9"/>
+                                        <constraint firstAttribute="trailing" secondItem="lsd-eq-zsu" secondAttribute="trailing" id="iY4-er-pWM"/>
+                                        <constraint firstItem="lsd-eq-zsu" firstAttribute="top" secondItem="h7C-g5-inU" secondAttribute="top" id="keS-tW-Dar"/>
+                                        <constraint firstItem="LbC-Tw-Cp4" firstAttribute="top" secondItem="MxK-bl-ajC" secondAttribute="bottom" constant="8" id="zGe-hL-zs3"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="commentLabel" destination="LbC-Tw-Cp4" id="HIv-vB-1d0"/>
+                                    <outlet property="selfieImageView" destination="lsd-eq-zsu" id="F5o-Wc-c8b"/>
+                                    <outlet property="usernameLabel" destination="MxK-bl-ajC" id="zwE-e5-52M"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -134,7 +168,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="0.79680277404912969" green="1" blue="0.80305880792731243" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.71139866110000005" green="0.75580638649999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="keyPath">
@@ -142,11 +175,6 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </tabBar>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="tintColor">
-                            <color key="value" red="0.76280788476585348" green="1" blue="0.76234681401669802" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="Z59-rN-3yo" kind="relationship" relationship="viewControllers" id="tla-u4-Fs3"/>
                         <segue destination="Qao-3Y-mxX" kind="relationship" relationship="viewControllers" id="feD-OB-Yq1"/>

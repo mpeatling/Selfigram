@@ -20,15 +20,11 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     @IBAction func cameraButtonPressed(_ sender: Any) {
-    let pickerController = UIImagePickerController()
-    pickerController.delegate = self
-        if TARGET_OS_SIMULATOR == 1 {
-            pickerController.sourceType = .photoLibrary
-        } else {
-            pickerController.sourceType = .camera
-            pickerController.cameraDevice = .front
-            pickerController.cameraCaptureMode = .photo
-        }
+        let pickerController = UIImagePickerController()
+        pickerController.delegate = self
+        pickerController.sourceType = .camera
+        pickerController.cameraDevice = .front
+        pickerController.cameraCaptureMode = .photo
         self.present(pickerController, animated: true, completion: nil)
     }
     
