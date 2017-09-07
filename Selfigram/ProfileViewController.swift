@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import Parse
 
 class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let user = PFUser.current() {
+            usernameLabel.text = user.username
+        if let imageFile = user["avatarImage"] as? PFFile {
+            imageFile.getDataInBackground(block: { (data, error) -> Void in
+                if let imageData = data {
+                    self.profileImageView.image = UIImage(data: imageData)
+                }
+            })
+        }
+    }
+}
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +46,22 @@ class ProfileViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
-                       profileImageView.image = image
+            if let imageData = UIImageJPEGRepresentation(image, 0.9),
+                let imageFile = PFFile(data: imageData),
+                let user = PFUser.current(){
+                // avatarImage is a new column in our User table
+                user["avatarImage"] = imageFile
+                user.saveInBackground(block: { (success, error) -> Void in
+                    if success {
+                        print("avatarImage successfully saved")
                     }
-        dismiss(animated: true, completion: nil)
+                })
+                
+            }
+
     }
+        dismiss(animated: true, completion: nil)
+}
 
     /*
     // MARK: - Navigation
