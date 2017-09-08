@@ -21,6 +21,7 @@
 		B61E3DA31F3C0E500039DFE7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B61E3DA21F3C0E500039DFE7 /* Assets.xcassets */; };
 		B62925711F4BB77C00904710 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62925701F4BB77C00904710 /* FeedViewController.swift */; };
 		B6478A4D1F4296E700BD2FC8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6478A4C1F4296E700BD2FC8 /* User.swift */; };
+		B66825ED1F60E2250033668C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66825EC1F60E2250033668C /* Activity.swift */; };
 		B69081F11F4284BA00749E30 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69081F01F4284BA00749E30 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		B61E3DA21F3C0E500039DFE7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B62925701F4BB77C00904710 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		B6478A4C1F4296E700BD2FC8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B66825EC1F60E2250033668C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		B69081F01F4284BA00749E30 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		C476CC87B1EC4BC1922E1BAA /* Pods-Selfigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfigram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selfigram/Pods-Selfigram.release.xcconfig"; sourceTree = "<group>"; };
 		C4F68821D070FE0088969091 /* Pods-SelfigramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfigramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelfigramUITests/Pods-SelfigramUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B60DD97F1F45226A00B614DE /* Post.swift */,
 				B6478A4C1F4296E700BD2FC8 /* User.swift */,
 				B6174ACC1F4E601B006E19BA /* SelfieCell.swift */,
+				B66825EC1F60E2250033668C /* Activity.swift */,
 			);
 			path = Customizations;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				B61E3D771F3C0A900039DFE7 /* ViewController.swift in Sources */,
 				B61E3D751F3C0A900039DFE7 /* AppDelegate.swift in Sources */,
 				B62925711F4BB77C00904710 /* FeedViewController.swift in Sources */,
+				B66825ED1F60E2250033668C /* Activity.swift in Sources */,
 				B60DD9801F45226A00B614DE /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

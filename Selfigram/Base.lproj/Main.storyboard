@@ -113,37 +113,55 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="319.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lsd-eq-zsu">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="250"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lsd-eq-zsu">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="260"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="250" id="1EP-Wq-JTv"/>
+                                                <constraint firstAttribute="height" constant="260" id="1EP-Wq-JTv"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MxK-bl-ajC">
-                                            <rect key="frame" x="0.0" y="258" width="76" height="21"/>
+                                            <rect key="frame" x="0.0" y="268" width="76" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="comment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LbC-Tw-Cp4">
-                                            <rect key="frame" x="0.0" y="287" width="72.5" height="21"/>
+                                            <rect key="frame" x="0.0" y="297" width="72.5" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ym-eH-5ri">
+                                            <rect key="frame" x="289" y="268" width="23" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="23" id="Ksg-BA-JRL"/>
+                                                <constraint firstAttribute="height" constant="20" id="czh-cu-rEZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <state key="normal" title="Button" image="hearts-off"/>
+                                            <state key="selected" image="hearts-on">
+                                                <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="likeButtonClicked:" destination="55K-Qp-O8b" eventType="touchUpInside" id="lWB-DU-vqb"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="lsd-eq-zsu" firstAttribute="leading" secondItem="h7C-g5-inU" secondAttribute="leading" id="Jax-8a-xkE"/>
                                         <constraint firstItem="MxK-bl-ajC" firstAttribute="top" secondItem="lsd-eq-zsu" secondAttribute="bottom" constant="8" id="Khi-tO-bhh"/>
                                         <constraint firstItem="LbC-Tw-Cp4" firstAttribute="leading" secondItem="h7C-g5-inU" secondAttribute="leading" id="LeU-RN-KXg"/>
                                         <constraint firstItem="MxK-bl-ajC" firstAttribute="leading" secondItem="h7C-g5-inU" secondAttribute="leading" id="g7V-DV-Sy9"/>
+                                        <constraint firstAttribute="trailing" secondItem="7Ym-eH-5ri" secondAttribute="trailing" constant="8" id="gIe-if-T8P"/>
                                         <constraint firstAttribute="trailing" secondItem="lsd-eq-zsu" secondAttribute="trailing" id="iY4-er-pWM"/>
                                         <constraint firstItem="lsd-eq-zsu" firstAttribute="top" secondItem="h7C-g5-inU" secondAttribute="top" id="keS-tW-Dar"/>
+                                        <constraint firstItem="7Ym-eH-5ri" firstAttribute="top" secondItem="lsd-eq-zsu" secondAttribute="bottom" constant="8" id="lpH-JX-wRV"/>
                                         <constraint firstItem="LbC-Tw-Cp4" firstAttribute="top" secondItem="MxK-bl-ajC" secondAttribute="bottom" constant="8" id="zGe-hL-zs3"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="commentLabel" destination="LbC-Tw-Cp4" id="HIv-vB-1d0"/>
+                                    <outlet property="likeButton" destination="7Ym-eH-5ri" id="d0o-Q8-PDu"/>
                                     <outlet property="selfieImageView" destination="lsd-eq-zsu" id="F5o-Wc-c8b"/>
                                     <outlet property="usernameLabel" destination="MxK-bl-ajC" id="zwE-e5-52M"/>
                                 </connections>
@@ -154,7 +172,13 @@
                             <outlet property="delegate" destination="Q2o-ZM-OzL" id="pSo-u5-FXA"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="SMj-Ui-Xkt"/>
+                    <navigationItem key="navigationItem" id="SMj-Ui-Xkt">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="KkT-nw-1nh">
+                            <connections>
+                                <action selector="cameraButtonPressed:" destination="Q2o-ZM-OzL" id="zUC-SE-UnF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gDK-QS-TUj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -250,6 +274,8 @@
         <image name="Activities" width="25" height="25"/>
         <image name="NewsFeed" width="25" height="25"/>
         <image name="Profile" width="25" height="25"/>
+        <image name="hearts-off" width="42" height="37"/>
+        <image name="hearts-on" width="42" height="37"/>
         <image name="placeholder" width="256" height="256"/>
     </resources>
 </document>
