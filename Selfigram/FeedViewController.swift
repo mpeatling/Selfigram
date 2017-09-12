@@ -16,9 +16,14 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
   
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.getPosts()
+        
+    }
+    
+    func getPosts() {
         if let query = Post.query() {
-                    query.order(byDescending: "createdAt")
-                    query.includeKey("user")
+            query.order(byDescending: "createdAt")
+            query.includeKey("user")
             query.findObjectsInBackground(block: { (posts, error) -> Void in
                 if let posts = posts as? [Post]{
                     self.posts = posts
@@ -27,7 +32,22 @@ class FeedViewController: UITableViewController, UIImagePickerControllerDelegate
             })
         }
     }
-
+    @IBAction func doubleTappedSelfie(_ sender: UITapGestureRecognizer) {
+        let tappedLocation = sender.location(in: tableView)
+        
+        if let indexPathAtTapLocation = tableView.indexPathForRow(at: tappedLocation) {
+            let cell = tableView.cellForRow(at: indexPathAtTapLocation) as! SelfieCell
+            
+            cell.tapAnimation()
+            
+        }
+        print("Double Tapped Selfie")
+    }
+    
+    @IBAction func refreshPulled(_ sender: Any) {
+        self.getPosts()
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

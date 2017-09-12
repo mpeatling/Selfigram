@@ -23,6 +23,8 @@
 		B6478A4D1F4296E700BD2FC8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6478A4C1F4296E700BD2FC8 /* User.swift */; };
 		B66825ED1F60E2250033668C /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66825EC1F60E2250033668C /* Activity.swift */; };
 		B69081F11F4284BA00749E30 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69081F01F4284BA00749E30 /* ProfileViewController.swift */; };
+		B6D56DA41F677373009F532A /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D56DA31F677373009F532A /* ActivityCell.swift */; };
+		B6D56DA61F67747D009F532A /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D56DA51F67747D009F532A /* ActivityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +70,8 @@
 		B6478A4C1F4296E700BD2FC8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B66825EC1F60E2250033668C /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		B69081F01F4284BA00749E30 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B6D56DA31F677373009F532A /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		B6D56DA51F67747D009F532A /* ActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		C476CC87B1EC4BC1922E1BAA /* Pods-Selfigram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selfigram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selfigram/Pods-Selfigram.release.xcconfig"; sourceTree = "<group>"; };
 		C4F68821D070FE0088969091 /* Pods-SelfigramUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SelfigramUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SelfigramUITests/Pods-SelfigramUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EB158A52FE37917AABB06C2B /* Pods_Selfigram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selfigram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -108,6 +112,7 @@
 				B6478A4C1F4296E700BD2FC8 /* User.swift */,
 				B6174ACC1F4E601B006E19BA /* SelfieCell.swift */,
 				B66825EC1F60E2250033668C /* Activity.swift */,
+				B6D56DA31F677373009F532A /* ActivityCell.swift */,
 			);
 			path = Customizations;
 			sourceTree = "<group>";
@@ -138,11 +143,12 @@
 			isa = PBXGroup;
 			children = (
 				B6174ACE1F4E605C006E19BA /* Customizations */,
+				B61E3D781F3C0A900039DFE7 /* Main.storyboard */,
 				B61E3D741F3C0A900039DFE7 /* AppDelegate.swift */,
+				B6D56DA51F67747D009F532A /* ActivityViewController.swift */,
 				B61E3D761F3C0A900039DFE7 /* ViewController.swift */,
 				B62925701F4BB77C00904710 /* FeedViewController.swift */,
 				B69081F01F4284BA00749E30 /* ProfileViewController.swift */,
-				B61E3D781F3C0A900039DFE7 /* Main.storyboard */,
 				B61E3DA21F3C0E500039DFE7 /* Assets.xcassets */,
 				B61E3D7D1F3C0A900039DFE7 /* LaunchScreen.storyboard */,
 				B61E3D801F3C0A900039DFE7 /* Info.plist */,
@@ -492,6 +498,8 @@
 			files = (
 				B6478A4D1F4296E700BD2FC8 /* User.swift in Sources */,
 				B69081F11F4284BA00749E30 /* ProfileViewController.swift in Sources */,
+				B6D56DA41F677373009F532A /* ActivityCell.swift in Sources */,
+				B6D56DA61F67747D009F532A /* ActivityViewController.swift in Sources */,
 				B6174ACD1F4E601B006E19BA /* SelfieCell.swift in Sources */,
 				B61E3D771F3C0A900039DFE7 /* ViewController.swift in Sources */,
 				B61E3D751F3C0A900039DFE7 /* AppDelegate.swift in Sources */,

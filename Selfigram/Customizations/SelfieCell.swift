@@ -14,6 +14,7 @@ class SelfieCell: UITableViewCell {
     @IBOutlet weak var usernameLabel: UILabel!
     @IBOutlet weak var commentLabel: UILabel!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var heartAnimationView: UIImageView!
     
     var post:Post? {
         didSet{
@@ -130,7 +131,19 @@ class SelfieCell: UITableViewCell {
 
         }
     }
+    
+    func tapAnimation() {
+        self.heartAnimationView.isHidden = false
+        self.heartAnimationView.transform = CGAffineTransform(scaleX: 0, y: 0)
         
+        UIView.animate(withDuration: 1.0, delay: 0, options: [], animations: { () -> Void in
+            self.heartAnimationView.transform = CGAffineTransform(scaleX: 3, y: 3)
+        }) { (success) -> Void in
+            self.heartAnimationView.isHidden = true
+        }
+        likeButtonClicked(likeButton)
+
+    }
 
     
     override func setSelected(_ selected: Bool, animated: Bool) {
